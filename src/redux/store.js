@@ -1,8 +1,14 @@
-import { createStore } from "redux";
-import { movieReducer } from "./reducers";
+import { combineReducers, createStore } from "redux";
+import { loadingReducer, movieReducer, dataReducer } from "./reducers";
 
 
-const store = createStore(movieReducer, 
+const rootReducer = combineReducers({
+    movies: movieReducer,
+    loading: loadingReducer,
+    data: dataReducer,
+})
+
+const store = createStore(rootReducer, 
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 )
 

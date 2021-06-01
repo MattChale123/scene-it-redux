@@ -1,25 +1,34 @@
 import './App.css';
 import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom'
 import Home from './pages/Home';
+import Watchlist from './pages/Watchlist';
+import { Navbar } from 'react-bootstrap';
+import Username from './components/Username';
 
 function App() {
   return (
-    <Router>
     <div className="App">
-      <nav>
-        <Link to='/'>Home</Link>
-      </nav>
-      <Switch>
-        <Route path='/' exact>
-          <Home />
-  
-        </Route>
-      </Switch>
+      <Router>
+        <Navbar>
+          <Link to='/'>Home</Link><br></br>
+          <Link to='/watchlist'>Watchlist</Link><br />
+          <Link to='/username'>Username</Link>
+        </Navbar>
+        <Switch>
+          <Route path='/' exact>
+            <Home />
+          </Route>
+          <Route path='/watchlist'>
+            <Watchlist />
+          </Route>
+          <Route path='/username'>
+            <Username />
+          </Route>
+        </Switch>
+      </Router>
     </div>
-    </Router>
   );
 }
 
 export default App;
 
-// http://www.omdbapi.com/?apikey=59354c85&s=
