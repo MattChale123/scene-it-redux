@@ -1,5 +1,5 @@
 import { combineReducers, createStore } from "redux";
-import { loadingReducer, movieReducer, dataReducer } from "./reducers";
+import { loadingReducer, movieReducer, dataReducer, infoReducer } from "./reducers";
 
 
 const rootReducer = combineReducers({

@@ -4,7 +4,9 @@ export const DELETE_MOVIE = 'DELETE_MOVIE'
 export function createAddMovie(watchMovieList) {
     return {
         type: ADD_MOVIE,
-        watchMovieList
+        payload: {
+            watchMovieList
+        }
     }
 }
 
@@ -43,3 +45,4 @@ export function setData(movieArray) {
         }
     }
 }
+
